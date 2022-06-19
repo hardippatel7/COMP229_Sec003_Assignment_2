@@ -2,12 +2,12 @@
 file: routes/index.js
 author: Hardip Patel (301230213)
 date: June 18, 2022
-   */
+*/
 var express = require("express");
 var router = express.Router();
 
 let indexRouteController = require("../controllers/index");
-/* GET home page. */
+//GET : endpoints to route to Home
 router.get("/", indexRouteController.routeToHomePage);
 router.get("/home", indexRouteController.routeToHomePage);
 //GET : endpoint to route to About Me
