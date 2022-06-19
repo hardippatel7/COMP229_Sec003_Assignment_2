@@ -1,7 +1,7 @@
 /* 
 file: routes/index.js
 author: Hardip Patel (301230213)
-date: June 3, 2022
+date: June 18, 2022
    */
 var express = require("express");
 var router = express.Router();
@@ -9,15 +9,20 @@ var router = express.Router();
 let indexRouteController = require("../controllers/index");
 /* GET home page. */
 router.get("/", indexRouteController.routeToHomePage);
-/* GET home page. */
 router.get("/home", indexRouteController.routeToHomePage);
-/* GET aboutme page. */
+//GET : endpoint to route to About Me
 router.get("/aboutme", indexRouteController.routeToAboutMe);
-/* GET projects page. */
+//GET : endpoint to route to Projects
 router.get("/projects", indexRouteController.routeToProjects);
-/* GET services page. */
+//GET : endpoint to route to Services
 router.get("/services", indexRouteController.routeToServices);
-/* GET contact page. */
+//GET : endpoint to route to Contact Me
 router.get("/contactme", indexRouteController.routeToContactMe);
+
+//GET : endpoints to route to Logib
+router.get("/login", indexRouteController.displayLoginPage);
+router.post("/login", indexRouteController.processLoginPage);
+//GET : endpoint to route to Logout
+router.get("/logout", indexRouteController.processLogout);
 
 module.exports = router;

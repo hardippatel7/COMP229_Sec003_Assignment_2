@@ -6,17 +6,9 @@ date: June 3, 2022
 var express = require("express");
 var router = express.Router();
 
-router.get('/', userspage);
-
 /* GET users listing. */
-function userspage(req, res, next) {
-  res.render(
-    'users', 
-    { 
-      title: 'Users',
-      userName: 'Hardip'
-    }
-  );
-}
+router.get("/", function (req, res, next) {
+  res.send("respond with a resource");
+});
 
 module.exports = router;
