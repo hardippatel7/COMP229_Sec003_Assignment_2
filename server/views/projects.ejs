@@ -1,0 +1,27 @@
+<!--
+file: projects.ejs
+author: Hardip Patel (301230213)
+date: June 3, 2022
+--> 
+<%- include('Partials/header.ejs'); %>
+<div class="wrapper-container">
+    <%- include('Partials/navbar.ejs'); %>
+    <!-- projects section -->
+    <section id="project" class="projects-section">
+        <h2>My Projects</h2>
+        <div class="flex-container">
+            <div class="proj-left">
+                <h3>Replica of Presto App Database</h3>
+                <!-- bootsrap website image -->
+                <a href="https://github.com/hardippatel7/presto_database_replica/"><img src="Assets/images/presto_app.png"
+                        alt="presto app image"></a>
+            </div>
+            <div class="proj-right">
+                <h3>Payment Solutuion with Stripe</h3>
+                <!-- todo list image -->
+                <img src="Assets/images/stripe.png" alt="stripe image"></a>
+            </div>
+        </div>
+    </section>
+</div>
+<%- include('Partials/footer.ejs'); %>

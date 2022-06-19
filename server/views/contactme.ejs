@@ -1,0 +1,46 @@
+<!--
+file: contactme.ejs
+author: Hardip Patel (301230213)
+date: June 3, 2022
+--> 
+<%- include('Partials/header.ejs'); %>
+<div class="wrapper-container">
+    <%- include('Partials/navbar.ejs'); %>
+
+    <!-- contact section -->
+    <section id="contact-me" class="contact-section">
+        <p style="margin-top: 80px; margin-bottom: 50px;">Did you find my profile interesting?
+            Yes? Let us connect. <br>
+            No? Please provide feedback for my improvement. <br>
+            In either case, it would be learning cruve for me :)</p>
+        <div class="contact-form-div">
+            <h2>Contact Me</h2>
+            <!-- contact form -->
+            <form class="contact-me-form" action="/" method="get">
+                <div class="row">
+                    <label for="name">First Name : </label>
+                    <input type="text" id="fname">
+                </div>
+                <div class="row">
+                    <label for="name">Last Name : </label>
+                    <input type="text" id="lname">
+                </div>
+                <div class="row">
+                    <label for="name">Phone : </label>
+                    <input type="text" id="phone">
+                </div>
+                <div class="row">
+                    <label for="email">Email : </label>
+                    <input type="email" id="email" value="">
+                </div>
+                <div class="row">
+                    <label for="message">Message : </label>
+                    <textarea id="message" rows="8" cols="118"></textarea>
+                </div>
+                <!-- submit button -->
+                <button class="submit-btn" type="submit" name="button">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+</div>
+<%- include('Partials/footer.ejs'); %>

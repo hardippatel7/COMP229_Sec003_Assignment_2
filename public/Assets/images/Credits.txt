@@ -1,0 +1,9 @@
+Resources:
+
+1. Logo images of facebook, instagram, linkedIn and github taken from https://www.flaticon.com/
+
+2. Profile image captured/developed by me.
+
+3. Image of Presto App taken from https://toronto.citynews.ca/ and edited by me.
+
+4. Image of Stripe taken from https://stripe.com and edited by me.
