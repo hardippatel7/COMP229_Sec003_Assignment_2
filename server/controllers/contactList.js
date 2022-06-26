@@ -6,6 +6,7 @@ date: June 18, 2022
 
 let contacts = require("../models/contacts");
 
+//Displays a list of Contacts
 module.exports.displayContactList = (req, res, next) => {
   contacts.find((err, contacts) => {
     if (err) {
@@ -20,6 +21,8 @@ module.exports.displayContactList = (req, res, next) => {
   });
 };
 
+
+//Displays an edit page
 module.exports.displayEditPage = (req, res, next) => {
   let id = req.params.id;
   console.log("edit id: " + id);
@@ -38,28 +41,28 @@ module.exports.displayEditPage = (req, res, next) => {
   });
 };
 
+//Update the data submitted on  the edit page
 module.exports.processEditPage = (req, res, next) => {
   let id = req.params.id;
-  let updatedContact = contacts({
-    _id: id,
-    name: req.body.name,
-    number: req.body.number,
-    email: req.body.email,
-  });
 
-  contacts.updateContact({ _id: id }, updatedContact, (err) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      res.redirect("/businesscontact");
-    }
-  });
+  contacts.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({
+          message: `Contact not found. Contact id : ${id}`,
+        });
+      } else {
+        res.redirect('/businesscontact');
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error occurred while updating contact information" });
+    });
 };
 
+//Deletes the selected contact
 module.exports.deleteContact = (req, res, next) => {
   let id = req.params.id;
-  // console.log("id:::" + id);
   contacts.remove({ _id: id }, (err) => {
     if (err) {
       console.log(err);

@@ -19,10 +19,4 @@ router.get("/services", indexRouteController.routeToServices);
 //GET : endpoint to route to Contact Me
 router.get("/contactme", indexRouteController.routeToContactMe);
 
-//GET : endpoints to route to Logib
-router.get("/login", indexRouteController.displayLoginPage);
-router.post("/login", indexRouteController.processLoginPage);
-//GET : endpoint to route to Logout
-router.get("/logout", indexRouteController.processLogout);
-
 module.exports = router;

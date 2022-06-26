@@ -5,15 +5,12 @@ date: June 16, 2022
 */
 let express = require("express");
 let router = express.Router();
-let mongoose = require("mongoose");
-
-let passport = require("passport");
 
 let contactController = require("../controllers/contactList");
+
 function requireAuth(req, res, next) {
-  // condition to check if user has logged in or not
   if (!req.isAuthenticated()) {
-    return res.redirect("/login");
+    return res.redirect("../../users/login");
   }
   next();
 }
