@@ -3,6 +3,7 @@ file: config/app.js
 author: Hardip Patel (301230213)
 date: June 3, 2022
 */
+//module initialization
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -12,6 +13,7 @@ let session = require('express-session');
 let passport = require('passport');
 let flash = require('connect-flash');
 
+//Routing setup
 var indexRouter = require("../routes/index");
 var usersRouter = require("../routes/users");
 var contactsRouter = require("../routes/contact");
@@ -31,6 +33,7 @@ mongoDB.once("open", () => {
 
 var app = express();
 
+//Session setup
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -53,8 +56,7 @@ app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
 
-// create a User Model Instance
-
+//Routing configuration
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/businesscontact", contactsRouter);
